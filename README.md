@@ -80,6 +80,45 @@ Messages window.
 Finder > Click On "List"> Select All
 • Give the Input Combinations according to the Truth Table and then simulate the Output waveform.
 
+## Program:
+
+
+module HS(a,b,differ,borrow);
+
+input a,b;
+
+output differ,borrow;
+
+xor (differ,a,b);
+
+assign borrow=(~a)&b;
+
+endmodule
+
+
+## Truthtable
+
+
+
+![Screenshot 2023-12-24 135933](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/e3660063-dfaa-4b19-b99a-36ea7d62d238)
+
+
+
+
+##  RTL realization
+
+
+
+![Screenshot 2023-12-24 135508](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/d31c3126-a3f7-4c49-a11d-3b8e149bfaa4)
+
+
+
+## Timing diagram 
+
+
+![Screenshot 2023-12-24 140239](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/37f52cb5-2577-478e-9861-c476af7de9c5)
+
+
 
 ## Full Subtractor
 A full subtractor is a combinational circuit that performs subtraction involving three bits, namely minuend, subtrahend, and borrow-in . It accepts three inputs: minuend, subtrahend and a borrow bit and it produces two outputs: difference and borrow. 
@@ -129,24 +168,23 @@ Finder > Click On "List"> Select All
 ## Program:
 
 
-module HS(a,b,differ,borrow);
+module fullsub(a,b,c,difference,borrow);
 
-input a,b;
+input a,b,c;
 
-output differ,borrow;
+output difference,borrow;
 
-xor (differ,a,b);
+assign difference=(a^b^c);
 
-assign borrow=(~a)&b;
+assign borrow=(~a&(b^c)|(b&c));
 
 endmodule
-
 
 ## Truthtable
 
 
 
-![Screenshot 2023-12-24 135933](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/e3660063-dfaa-4b19-b99a-36ea7d62d238)
+![Screenshot 2024-01-03 155513](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/aad8ea87-9505-4251-8843-a37ddf0c87fa)
 
 
 
@@ -154,15 +192,16 @@ endmodule
 ##  RTL realization
 
 
+![Screenshot 2024-01-03 155650](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/8c9bd8f0-a7ed-4634-af6a-c4178abc42e4)
 
-![Screenshot 2023-12-24 135508](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/d31c3126-a3f7-4c49-a11d-3b8e149bfaa4)
 
 
 
 ## Timing diagram 
 
 
-![Screenshot 2023-12-24 140239](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/37f52cb5-2577-478e-9861-c476af7de9c5)
+![Screenshot 2024-01-03 155729](https://github.com/SowdeswariS/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/154341385/284ed2bb-4c29-459c-9675-e0bc0ce36d0c)
+
 
 
 ## Result:
